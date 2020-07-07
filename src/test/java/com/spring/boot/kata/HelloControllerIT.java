@@ -31,5 +31,4 @@ public class HelloControllerIT {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(base.toString(), String.class);
         assertThat(responseEntity.getBody()).isEqualTo("Hello Spring Boot!!");
     }
-
 }
