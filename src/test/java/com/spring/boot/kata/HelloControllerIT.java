@@ -14,7 +14,7 @@ import java.net.URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class HelloControllerIT {
+class HelloControllerIT {
     @LocalServerPort
     private int port;
     private URL base;
@@ -27,7 +27,7 @@ public class HelloControllerIT {
     }
 
     @Test
-    public void getHello() {
+    void getHello() {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(base.toString(), String.class);
         assertThat(responseEntity.getBody()).isEqualTo("Hello Spring Boot!!");
     }

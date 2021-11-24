@@ -14,12 +14,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloControllerTest {
+class HelloControllerTest {
     @Autowired
     MockMvc mockMvc;
 
     @Test
-    public void getHello() throws Exception {
+    void getHello() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello Spring Boot!!"));
