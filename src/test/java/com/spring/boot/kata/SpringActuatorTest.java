@@ -10,6 +10,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.hamcrest.Matchers.containsString;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class SpringActuatorTest {
@@ -19,7 +21,8 @@ class SpringActuatorTest {
     void shouldReceiveActuatorEndpointSuccessfully() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/actuator")
                 .accept(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(containsString("/localhost/actuator/")));
     }
 
 }
