@@ -16,13 +16,20 @@ import static org.hamcrest.Matchers.containsString;
 @AutoConfigureMockMvc
 class SpringActuatorTest {
     @Autowired
-    private  MockMvc mockMvc;
+    private MockMvc mockMvc;
+
     @Test
     void shouldReceiveActuatorEndpointSuccessfully() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/actuator")
-                .accept(MediaType.APPLICATION_JSON))
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(containsString("/localhost/actuator/")));
     }
 
+    @Test
+    void shouldReceiveNotFoundWhenHitWrongURL() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/act")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().is4xxClientError());
+    }
 }
