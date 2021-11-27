@@ -14,9 +14,9 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.6'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
 }
 
 test {
