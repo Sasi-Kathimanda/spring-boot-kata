@@ -1,3 +1,5 @@
+package simulations;
+
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
 
@@ -14,7 +16,7 @@ public class BasicSimulation extends Simulation { // 3
             .acceptEncodingHeader("gzip, deflate")
             .userAgentHeader("Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0");
 
-    ScenarioBuilder scn = scenario("BasicSimulation") // 7
+    ScenarioBuilder scn = scenario("simulations.BasicSimulation") // 7
             .exec(http("request_1") // 8
                     .get("/")) // 9
             .pause(5); // 10
