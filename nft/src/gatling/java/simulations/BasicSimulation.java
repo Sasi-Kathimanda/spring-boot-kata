@@ -3,6 +3,8 @@ package simulations;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
 
+import java.time.Duration;
+
 import static io.gatling.javaapi.core.CoreDsl.*;
 import static io.gatling.javaapi.http.HttpDsl.*;
 
@@ -23,7 +25,11 @@ public class BasicSimulation extends Simulation { // 3
 
     {
         setUp( // 11
-                scn.injectOpen(atOnceUsers(1)) // 12
-        ).protocols(httpProtocol); // 13
+                scn.injectOpen(
+                        //nothingFor(30),
+                        // atOnceUsers(1)
+                        rampUsers(10).during(Duration.ofSeconds(60))) // 12
+        ).protocols(httpProtocol)
+                .assertions(global().failedRequests().count().is(0L));
     }
 }
