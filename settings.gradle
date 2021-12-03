@@ -12,4 +12,5 @@ pluginManagement {
 	}
 }
 rootProject.name = 'spring-boot-kata'
+include 'app'
 include 'nft'
