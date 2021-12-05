@@ -6,7 +6,6 @@ plugins {
 
 group = 'com.spring.boot'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
@@ -21,4 +20,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
 }
