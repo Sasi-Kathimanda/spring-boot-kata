@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 public class HelloController {
     private static final AtomicInteger counter = new AtomicInteger(1);
+
     @RequestMapping()
     public String index() {
         log.info("INFO hitting home page for {} times ", counter.getAndIncrement());
