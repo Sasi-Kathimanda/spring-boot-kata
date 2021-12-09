@@ -23,7 +23,7 @@ class HelloControllerIT {
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        this.base = new URL("http://localhost:"+port);
+        this.base = new URL("http://localhost:" + port);
     }
 
     @Test
