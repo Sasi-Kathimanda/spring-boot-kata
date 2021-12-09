@@ -36,7 +36,7 @@ class SpringActuatorTest {
     @Test
     void shouldDisplayInfoOfTheProjectWhenActuatorInfoClicked() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/actuator/info")
-                .accept(MediaType.APPLICATION_JSON))
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(containsString("\"name\":\"Spring Boot Kata\"")));
     }
