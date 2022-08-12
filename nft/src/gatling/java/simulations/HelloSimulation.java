@@ -1,7 +1,7 @@
 package simulations;
 
 import io.gatling.javaapi.core.*;
-import io.gatling.javaapi.http.*;
+import io.gatling.javaapi.http.HttpProtocolBuilder;
 
 import java.time.Duration;
 
