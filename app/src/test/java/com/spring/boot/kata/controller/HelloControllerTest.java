@@ -1,4 +1,4 @@
-package com.spring.boot.kata;
+package com.spring.boot.kata.controller;
 
 
 import org.junit.jupiter.api.Test;
