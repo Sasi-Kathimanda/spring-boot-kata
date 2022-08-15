@@ -16,6 +16,6 @@ class PropertyInjectedControllerTest {
 
     @Test
     void greetingServiceGreetReturnsGreetingMsg() {
-        assertEquals("Hello Hello", sut.greetingService.greeting());
+        assertEquals("Hello Hello", sut.greet());
     }
 }
