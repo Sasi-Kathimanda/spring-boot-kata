@@ -1,10 +1,14 @@
 package com.spring.boot.kata.controller;
 
 import com.spring.boot.kata.service.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class SetterInjectedController {
-    GreetingService greetingService;
 
+    GreetingService greetingService;
+    @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
