@@ -15,6 +15,6 @@ class SetterInjectedControllerITTest {
     @Test
     void setterInjectionViaSpringBean() {
         var controller = (SetterInjectedController) context.getBean("setterInjectedController");
-        assertEquals("Hello Hello", controller.greet());
+        assertEquals("Hello Hello from setter service", controller.greet());
     }
 }
