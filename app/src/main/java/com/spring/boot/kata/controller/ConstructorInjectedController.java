@@ -1,5 +1,7 @@
 package com.spring.boot.kata.controller;
 
+import com.spring.boot.kata.service.GreetingService;
+
 public class ConstructorInjectedController {
     private final GreetingService greetingService;
 

@@ -1,5 +1,6 @@
 package com.spring.boot.kata.controller;
 
+import com.spring.boot.kata.service.GreetingServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

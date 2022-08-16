@@ -1,4 +1,4 @@
-package com.spring.boot.kata.controller;
+package com.spring.boot.kata.service;
 
 public class GreetingServiceImpl implements GreetingService {
     @Override
