@@ -15,7 +15,7 @@ class ConstructorInjectedControllerITTest {
     @Test
     void constructorInjectionViaSpringContext() {
         var controller = (ConstructorInjectedController) applicationContext.getBean("constructorInjectedController");
-        assertEquals("Hello Hello", controller.greet());
+        assertEquals("Hello Hello from constructor service", controller.greet());
 
     }
 }
