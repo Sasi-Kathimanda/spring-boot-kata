@@ -16,6 +16,6 @@ class PropertyInjectedControllerITTest {
     @Test
     void propertyInjectionViaSpringContext() {
         var propertyInjectedController = (PropertyInjectedController) applicationContext.getBean("propertyInjectedController");
-        assertEquals("Hello Hello", propertyInjectedController.greet());
+        assertEquals("Hello Hello from property service", propertyInjectedController.greet());
     }
 }
