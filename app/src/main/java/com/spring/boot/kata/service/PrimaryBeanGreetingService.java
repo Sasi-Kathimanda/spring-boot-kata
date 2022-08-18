@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public class PrimaryBeanGreetingService implements GreetingService {
     @Override
     public String greeting() {
-        return "Hello Hello from Primary Bean";
+        return "Hello Hello from primary bean";
     }
 }

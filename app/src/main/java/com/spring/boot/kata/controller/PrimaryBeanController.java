@@ -12,6 +12,6 @@ public class PrimaryBeanController {
     }
 
     public String greet() {
-        return "";
+        return greetingService.greeting();
     }
 }
