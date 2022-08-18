@@ -8,13 +8,14 @@ import org.springframework.context.ApplicationContext;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class PrimaryBeanControllerITTest {
+class ConstructorInjectedControllerIT {
     @Autowired
     ApplicationContext applicationContext;
 
     @Test
-    void shouldGetTheMessageFromPrimaryBean() {
-        var controller = (PrimaryBeanController) applicationContext.getBean("primaryBeanController");
-        assertEquals("Hello Hello from primary bean", controller.greet());
+    void constructorInjectionViaSpringContext() {
+        var controller = (ConstructorInjectedController) applicationContext.getBean("constructorInjectedController");
+        assertEquals("Hello Hello from constructor service", controller.greet());
+
     }
 }

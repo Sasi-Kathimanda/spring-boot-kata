@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class SetterInjectedControllerITTest {
+class SetterInjectedControllerIT {
     @Autowired
     ApplicationContext context;
 

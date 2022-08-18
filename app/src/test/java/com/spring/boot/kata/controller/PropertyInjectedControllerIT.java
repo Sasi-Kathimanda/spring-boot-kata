@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @SpringBootTest
-class PropertyInjectedControllerITTest {
+class PropertyInjectedControllerIT {
     @Autowired
     ApplicationContext applicationContext;
 
