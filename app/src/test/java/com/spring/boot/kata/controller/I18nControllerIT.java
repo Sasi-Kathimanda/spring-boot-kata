@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("EN")
 class I18nControllerIT {
     @Autowired
     ApplicationContext context;
