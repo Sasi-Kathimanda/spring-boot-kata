@@ -18,4 +18,11 @@ class I18nControllerIT {
         var controller = (I18nController) context.getBean("i18nController");
         Assertions.assertEquals("Hello World in EN", controller.greet());
     }
+
+    @Test
+    @EnabledIf(expression = "#{environment['spring.profiles.active'] == 'ES'}", loadContext = true)
+    void shouldGiveESMessageWhenProfileSetAsES() {
+        var controller = (I18nController) context.getBean("i18nController");
+        Assertions.assertEquals("Hello Mundo in ES", controller.greet());
+    }
 }
