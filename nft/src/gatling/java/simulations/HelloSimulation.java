@@ -1,8 +1,8 @@
 package simulations;
 
-import io.gatling.javaapi.core.*;
+import io.gatling.javaapi.core.ScenarioBuilder;
+import io.gatling.javaapi.core.Simulation;
 import io.gatling.javaapi.http.HttpProtocolBuilder;
-
 import java.time.Duration;
 
 import static io.gatling.javaapi.core.CoreDsl.rampUsers;
