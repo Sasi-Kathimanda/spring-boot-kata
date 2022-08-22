@@ -21,8 +21,6 @@ public class SpringBootKataApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            var myController = (MyController) ctx.getBean("myController");
-            log.info("myController = " + myController.index());
             log.info("lets inspect beans provided by spring ");
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
