@@ -17,5 +17,4 @@ class ConstructorInjectedControllerTest {
     void getTheGreetingMsgViaConstructorInjectedController() {
         Assertions.assertEquals("Hello Hello", sut.greet());
     }
-
 }
