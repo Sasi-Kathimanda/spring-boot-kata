@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'pl.allegro.tech.build.axion-release'
 }
 
 group 'org.example'
@@ -16,4 +17,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+scmVersion {
+    localOnly = true
+    tag {
+        prefix = project.name
+        versionSeparator = '-'
+    }
 }
