@@ -11,8 +11,8 @@ publishing {
         maven(MavenPublication) {
             pom {
                 scm {
-                    developerConnection = 'scm:git@github.com:Sasi-Kathimanda/spring-boot-kata.git'
-                    url = 'https://github.com/Sasi-Kathimanda/spring-boot-kata'
+                    developerConnection = 'scm:git:git@github.com:Sasi-Kathimanda/spring-boot-kata.git'
+//                    url = 'https://github.com/Sasi-Kathimanda/spring-boot-kata'
                 }
             }
         }
