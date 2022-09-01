@@ -20,7 +20,7 @@ test {
 }
 
 scmVersion {
-    localOnly = true
+//    localOnly = true
     tag {
         prefix = project.name
         versionSeparator = '-'
