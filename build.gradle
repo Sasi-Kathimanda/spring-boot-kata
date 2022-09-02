@@ -17,4 +17,12 @@ publishing {
             }
         }
     }
+        repositories {
+            maven {
+                credentials {
+                    username = gitUsername
+                    password = gitPassword
+                }
+            }
+        }
 }
