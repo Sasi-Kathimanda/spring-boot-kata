@@ -33,10 +33,14 @@ java {
     }
 }
 
- scmVersion {
-        localOnly = true
-        tag {
-            prefix = project.name
-            versionSeparator = '-'
-        }
+scmVersion {
+    tag {
+        prefix = project.name
+        versionSeparator = '-'
     }
+    checks {
+        uncommittedChanges.set(false)
+        aheadOfRemote.set(false)
+        snapshotDependencies.set(false)
+    }
+}
