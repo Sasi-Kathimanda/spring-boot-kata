@@ -12,7 +12,7 @@ publishing {
             pom {
                 scm {
                     developerConnection = 'scm:git:git@github.com:Sasi-Kathimanda/spring-boot-kata.git'
-//                    url = 'https://github.com/Sasi-Kathimanda/spring-boot-kata'
+                    url = 'https://github.com/Sasi-Kathimanda/spring-boot-kata/tree/master'
                 }
             }
         }
