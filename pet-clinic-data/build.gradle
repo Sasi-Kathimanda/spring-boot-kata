@@ -27,9 +27,4 @@ scmVersion {
     repository {
         pushTagsOnly = true
     }
-    checks {
-        uncommittedChanges.set(true)
-        aheadOfRemote.set(true)
-        snapshotDependencies.set(false)
-    }
 }
