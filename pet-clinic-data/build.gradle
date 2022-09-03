@@ -20,9 +20,16 @@ test {
 }
 
 scmVersion {
-//    localOnly = true
     tag {
         prefix = project.name
         versionSeparator = '-'
+    }
+    repository {
+        pushTagsOnly = true
+    }
+    checks {
+        uncommittedChanges.set(true)
+        aheadOfRemote.set(true)
+        snapshotDependencies.set(false)
     }
 }
