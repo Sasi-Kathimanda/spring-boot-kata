@@ -38,9 +38,4 @@ scmVersion {
         prefix = project.name
         versionSeparator = '-'
     }
-    checks {
-        uncommittedChanges.set(true)
-        aheadOfRemote.set(true)
-        snapshotDependencies.set(false)
-    }
 }
