@@ -2,11 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.4.0-M1'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
-    id 'pl.allegro.tech.build.axion-release'
 }
-
-group = 'com.spring.boot'
-version = '0.0.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -30,12 +26,5 @@ test {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(11)
-    }
-}
-
-scmVersion {
-    tag {
-        prefix = project.name
-        versionSeparator = '-'
     }
 }

@@ -1,8 +1,22 @@
 plugins {
-    id 'pl.allegro.tech.build.axion-release' version '1.14.0' apply(false)
+    id 'pl.allegro.tech.build.axion-release' version '1.14.0' apply true
     id 'maven-publish'
 }
 repositories {
     mavenCentral()
     maven { url 'https://repo.spring.io/milestone' }
+}
+
+allprojects {
+    group = 'com.spring.boot'
+    project.version = scmVersion.version
+    scmVersion {
+        tag {
+            prefix = project.name
+            versionSeparator = '-'
+        }
+        repository {
+            pushTagsOnly = true
+        }
+    }
 }

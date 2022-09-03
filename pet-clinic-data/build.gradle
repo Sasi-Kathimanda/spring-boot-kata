@@ -1,10 +1,6 @@
 plugins {
     id 'java'
-    id 'pl.allegro.tech.build.axion-release'
 }
-
-group 'org.example'
-version 'unspecified'
 
 repositories {
     mavenCentral()
@@ -17,14 +13,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-scmVersion {
-    tag {
-        prefix = project.name
-        versionSeparator = '-'
-    }
-    repository {
-        pushTagsOnly = true
-    }
 }
