@@ -7,11 +7,11 @@ repositories {
     maven { url 'https://repo.spring.io/milestone' }
 }
 
-allprojects {
+subprojects {
     scmVersion {
+        project.version = scmVersion.version
         tag {
             prefix = project.name
-            project.version = scmVersion.version
             versionSeparator = '-'
         }
         repository {
