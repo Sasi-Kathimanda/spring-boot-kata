@@ -9,7 +9,6 @@ repositories {
 
 subprojects {
     scmVersion {
-        project.version = scmVersion.version
         tag {
             prefix = project.name
             versionSeparator = '-'
