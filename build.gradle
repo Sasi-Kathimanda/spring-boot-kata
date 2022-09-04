@@ -9,10 +9,10 @@ repositories {
 
 subprojects {
     scmVersion {
-        tag {
-//            prefix = project.name
-            versionSeparator = '-'
-        }
+//        tag {
+////            prefix = project.name
+////            versionSeparator = '-'
+//        }
         repository {
             pushTagsOnly = true
         }
