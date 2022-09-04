@@ -8,11 +8,10 @@ repositories {
 }
 
 allprojects {
-    group = 'com.spring.boot'
-    project.version = scmVersion.version
     scmVersion {
         tag {
             prefix = project.name
+            project.version = scmVersion.version
             versionSeparator = '-'
         }
         repository {
