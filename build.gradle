@@ -10,7 +10,7 @@ repositories {
 subprojects {
     scmVersion {
         tag {
-            prefix = project.name
+//            prefix = project.name
             versionSeparator = '-'
         }
         repository {
