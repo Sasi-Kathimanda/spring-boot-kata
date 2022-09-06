@@ -1,8 +1,13 @@
 package com.spring.boot.kata.model;
 
+import org.hibernate.annotations.ManyToAny;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.util.Set;
 @Entity
 public class Book {
@@ -10,7 +15,15 @@ public class Book {
     Long id;
     String title;
     String isbn;
+    @ManyToMany
+    @JoinTable(name="author_book",
+            joinColumns = @JoinColumn(name="book_id"),
+            inverseJoinColumns = @JoinColumn(name="auth_id")
+    )
     Set<Author> authors;
+
+    public Book() {
+    }
 
     public Book(String title, String isbn) {
         this.title = title;
