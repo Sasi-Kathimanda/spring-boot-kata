@@ -4,12 +4,14 @@ import com.spring.boot.kata.model.Author;
 import com.spring.boot.kata.model.Book;
 import com.spring.boot.kata.repositories.AuthorRepository;
 import com.spring.boot.kata.repositories.BookRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;
 
 @Component
+@Slf4j
 public class BootStrapData implements CommandLineRunner {
     AuthorRepository authorRepository;
     BookRepository bookRepository;
@@ -27,7 +29,7 @@ public class BootStrapData implements CommandLineRunner {
         bookRepository.save(alchemist);
         authorRepository.save(paul);
 
-        System.out.println("started bootstraping book data");
-        System.out.println("number of books saved " + bookRepository.count());
+        log.info("started bootstraping book data");
+        log.info("number of books saved " + bookRepository.count());
     }
 }
