@@ -17,6 +17,8 @@ import java.util.Set;
 public class BootStrapData implements CommandLineRunner {
     AuthorRepository authorRepository;
     BookRepository bookRepository;
+    PublisherRepository publisherRepository;
+
 
     public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
@@ -24,12 +26,6 @@ public class BootStrapData implements CommandLineRunner {
         this.publisherRepository = publisherRepository;
     }
 
-    PublisherRepository publisherRepository;
-
-    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
-        this.authorRepository = authorRepository;
-        this.bookRepository = bookRepository;
-    }
 
     @Override
     public void run(String... args) throws Exception {
