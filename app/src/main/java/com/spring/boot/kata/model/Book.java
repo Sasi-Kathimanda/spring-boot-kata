@@ -1,6 +1,5 @@
 package com.spring.boot.kata.model;
 
-import org.hibernate.annotations.ManyToAny;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
