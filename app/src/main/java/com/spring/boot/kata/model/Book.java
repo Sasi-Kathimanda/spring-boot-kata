@@ -34,4 +34,9 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "auth_id")
     )
     Set<Author> authors;
+
+    public Book(String title, String isbn) {
+        this.title = title;
+        this.isbn  = isbn;
+    }
 }
