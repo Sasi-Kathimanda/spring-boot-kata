@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import java.util.Set;
 
 @Entity
@@ -34,6 +35,8 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "auth_id")
     )
     Set<Author> authors;
+    @ManyToOne
+    Publisher publisher;
 
     public Book(String title, String isbn) {
         this.title = title;

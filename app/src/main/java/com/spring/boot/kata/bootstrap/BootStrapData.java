@@ -26,19 +26,20 @@ public class BootStrapData implements CommandLineRunner {
         this.publisherRepository = publisherRepository;
     }
 
-
     @Override
     public void run(String... args) throws Exception {
         log.info("started bootstrapping book data");
-        var paul = new Author("Paul", "Coelho");
-        var alchemist = new Book("The Alchemist", "001");
+        var author = new Author("Paul", "Coelho");
+        var alchemistBook = new Book("The Alchemist", "001");
         var publisher = new Publisher("Sas Publications", "Sas Villa", "Sas city", "Sas State", "Sas Zipcode");
-        paul.setBooks(Set.of(alchemist));
+        author.setBooks(Set.of(alchemistBook));
+        publisher.setBooks(Set.of(alchemistBook));
 
-        bookRepository.save(alchemist);
-        authorRepository.save(paul);
+        bookRepository.save(alchemistBook);
+        authorRepository.save(author);
         publisherRepository.save(publisher);
         log.info("number of books saved " + bookRepository.count());
         log.info("number of publishers saved " + publisherRepository.count());
+        log.info("number of books publishers have " + publisher.getBooks().size());
     }
 }

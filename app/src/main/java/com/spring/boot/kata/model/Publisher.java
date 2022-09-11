@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -15,6 +18,9 @@ public class Publisher {
     String city;
     String state;
     String zipcode;
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
+    Set<Book> books;
 
     public Publisher(String name, String addressLine1, String city, String state, String zipcode) {
         this.name = name;
@@ -63,7 +69,13 @@ public class Publisher {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+    public Set<Book> getBooks() {
+        return books;
+    }
 
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
     @Override
     public String toString() {
         return "Publisher{" +
