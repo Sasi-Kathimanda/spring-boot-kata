@@ -15,4 +15,5 @@ rootProject.name = 'spring-boot-kata'
 include 'app'
 include 'nft'
 include 'pet-clinic-data'
+include 'jokes-app'
 
