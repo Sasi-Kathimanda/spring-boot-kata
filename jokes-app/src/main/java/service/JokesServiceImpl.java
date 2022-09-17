@@ -1,8 +1,10 @@
 package service;
 
+import guru.springframework.norris.chuck.ChuckNorrisQuotes;
+
 public class JokesServiceImpl implements JokesService {
     @Override
     public String getJokes() {
-        return null;
+        return new ChuckNorrisQuotes().getRandomQuote();
     }
 }
