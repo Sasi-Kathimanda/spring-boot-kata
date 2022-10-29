@@ -1,5 +1,7 @@
 package com.spring.boot.kata.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spring.boot.kata.model.UserAccount;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,24 +13,28 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.hamcrest.Matchers.hasSize;
+
 @AutoConfigureMockMvc
 @SpringBootTest
 class UserAccountControllerTest {
     @Autowired
     MockMvc mockMvc;
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @BeforeEach
     void setUp() {
     }
 
     @Test
-    void saveBasicInfo() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/saveBasicInfo")
-                        .accept(MediaType.APPLICATION_JSON)
-                        .param("userName","Sa")
-                        )
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.fieldErrors",hasSize(1)));
-        //TODO: Assert fails
+    void validBasicInfoWithMissingData() throws Exception {
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUserName("");
+        String body = objectMapper.writeValueAsString(userAccount);
+        mockMvc.perform(MockMvcRequestBuilders.post("/validBasicInfo")
+//                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content(body))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
 }
