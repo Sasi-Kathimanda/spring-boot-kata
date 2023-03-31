@@ -5,3 +5,15 @@ plugins {
 repositories {
     mavenCentral()
 }
+
+subprojects {
+    scmVersion {
+        tag {
+            prefix = project.name
+            versionSeparator = '-'
+        }
+        repository {
+            pushTagsOnly = true
+        }
+    }
+}
