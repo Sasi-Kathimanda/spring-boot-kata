@@ -18,3 +18,15 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+subprojects {
+    scmVersion {
+        tag {
+            prefix = project.name
+            versionSeparator = '-'
+        }
+        repository {
+            pushTagsOnly = true
+        }
+    }
+}
