@@ -1,5 +1,5 @@
 plugins {
-    id 'pl.allegro.tech.build.axion-release' version '1.14.2' apply true
+    id 'pl.allegro.tech.build.axion-release' version '1.14.2' apply false
     id 'maven-publish'
 }
 repositories {
@@ -8,8 +8,9 @@ repositories {
 }
 
 subprojects {
+    apply plugin : 'pl.allegro.tech.build.axion-release'
     scmVersion {
-                tag {
+        tag {
             prefix = project.name
             versionSeparator = '-'
         }
