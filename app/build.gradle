@@ -32,15 +32,3 @@ java {
         languageVersion = JavaLanguageVersion.of(11)
     }
 }
-
-subprojects {
-    scmVersion {
-        tag {
-            prefix = project.name
-            versionSeparator = '-'
-        }
-        repository {
-            pushTagsOnly = true
-        }
-    }
-}
