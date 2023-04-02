@@ -16,6 +16,8 @@ subprojects {
         }
         repository {
             pushTagsOnly = true
+            customUsername = gitUsername
+            customPassword = gitPassword
         }
     }
 }
