@@ -17,13 +17,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 class HelloControllerIT {
     @LocalServerPort
     private int port;
+    private String path = "hello";
     private URL base;
     @Autowired
     TestRestTemplate restTemplate;
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        this.base = new URL("http://localhost:" + port);
+        this.base = new URL(String.format("http://localhost:%s/%s/", port, path));
     }
 
     @Test
