@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class HelloController {
     private static final AtomicInteger counter = new AtomicInteger(1);
 
-    @RequestMapping()
+    @RequestMapping("/hello")
     public String index() {
         log.info("INFO hitting home page for {} times ", counter.getAndIncrement());
         return "Hello Spring Boot!!";
