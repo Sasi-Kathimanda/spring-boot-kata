@@ -1,0 +1,26 @@
+info:
+  app:
+    description: All practice(kata) about spring boot app
+    name: Spring Boot Kata
+    version: 1.0.0
+logging:
+  level:
+    com:
+      spring:
+        boot:
+          kata:
+            '*': INFO
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+spring:
+  banner:
+    location: classpath:cybermedium.txt
+  h2:
+    console:
+      enabled: true
