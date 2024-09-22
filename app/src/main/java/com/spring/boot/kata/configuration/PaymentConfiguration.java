@@ -1,32 +1,16 @@
 package com.spring.boot.kata.configuration;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-
 import java.util.List;
 
-@Configuration
-@ConfigurationProperties(prefix = "payment-configuration")
 public class PaymentConfiguration {
-    private List<PaymentProviderConfig> paymentProviderConfiguration;
+    private List<PaymentProvider> paymentConfiguration;
 
-    public List<PaymentProviderConfig> getPaymentConfiguration() {
-        return paymentProviderConfiguration;
+    public List<PaymentProvider> getPaymentConfiguration() {
+        return paymentConfiguration;
     }
 
-    public void setPaymentConfiguration(List<PaymentProviderConfig> paymentProviderConfiguration) {
-        this.paymentProviderConfiguration = paymentProviderConfiguration;
-    }
-
-    public record PaymentProviderConfig(List<String> paymentProvider,
-                                        PaymentMethod paymentMethod,
-                                        Schedule schedule
-    ) {
-    }
-
-    public record PaymentMethod(List<String> enableMethods, List<String> disableMethods) {
-    }
-
-    public record Schedule(boolean retry) {
+    public void setPaymentConfiguration(List<PaymentProvider> paymentConfiguration) {
+        this.paymentConfiguration = paymentConfiguration;
     }
 }
+

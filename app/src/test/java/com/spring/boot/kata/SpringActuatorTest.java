@@ -14,7 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.hamcrest.Matchers.containsString;
 
 @SpringBootTest
-@ActiveProfiles("test")
+@ActiveProfiles("default")
 @AutoConfigureMockMvc
 class SpringActuatorTest {
     @Autowired
