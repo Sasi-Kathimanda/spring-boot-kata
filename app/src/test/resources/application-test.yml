@@ -20,22 +20,23 @@ management:
       enabled: true
 payment-configuration:
   - paymentProvider: Apple
-    enabled: true 
-    PaymentMethods:
-      - enable:
-          - applePay
-      - disable:
-          - googlePay
-    PaymentMethodType:
-      - disable:
-          - PhonePe
+    enabled: true
+    paymentMethod:
+      enable:
+        - applePay
+      disable:
+        - googlePay
+    paymentMethodType:
+      disable:
+        - PhonePe
     schedule:
       retry: true
   - paymentProvider: Samsung
-    PaymentMethods:
-     - enable:
-         -androidPay
-     - disable:
+    enabled: true
+    paymentMethod:
+      enable:
+        - androidPay
+      disable:
         - payTm
     schedule:
       retry: false
@@ -45,3 +46,6 @@ spring:
   h2:
     console:
       enabled: true
+#  config:
+#    activate:
+#      on-profile: test
