@@ -18,6 +18,27 @@ management:
   info:
     env:
       enabled: true
+payment-configuration:
+  - paymentProvider: Apple
+    enabled: true 
+    PaymentMethods:
+      - enable:
+          - applePay
+      - disable:
+          - googlePay
+    PaymentMethodType:
+      - disable:
+          - PhonePe
+    schedule:
+      retry: true
+  - paymentProvider: Samsung
+    PaymentMethods:
+     - enable:
+         -androidPay
+     - disable:
+        - payTm
+    schedule:
+      retry: false
 spring:
   banner:
     location: classpath:cybermedium.txt
