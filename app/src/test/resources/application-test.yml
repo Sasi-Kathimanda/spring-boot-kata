@@ -1,0 +1,50 @@
+info:
+  app:
+    description: All practice(kata) about spring boot app
+    name: Spring Boot Kata
+    version: 1.0.0
+logging:
+  level:
+    com:
+      spring:
+        boot:
+          kata:
+            '*': INFO
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+payment-configuration:
+  - paymentProvider: Apple
+    enabled: true
+    PaymentMethods:
+      - enable:
+          - applePay
+      - disable:
+          - googlePay
+    PaymentMethodType:
+      - disable:
+          - PhonePe
+    schedule:
+      retry: true
+  - paymentProvider: Samsung
+    PaymentMethods:
+      - enable:
+          -androidPay
+      - disable:
+          - payTm
+    schedule:
+      retry: false
+spring:
+  banner:
+    location: classpath:cybermedium.txt
+  h2:
+    console:
+      enabled: true
+  config:
+    activate:
+      on-profile: test
