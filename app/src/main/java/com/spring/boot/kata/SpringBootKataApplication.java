@@ -26,7 +26,7 @@ public class SpringBootKataApplication {
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
             for (String name : beanNames) {
-               // log.info(name);
+                log.info(name);
             }
         };
     }

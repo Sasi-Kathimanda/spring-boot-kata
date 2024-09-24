@@ -19,6 +19,7 @@ management:
     env:
       enabled: true
 payment-configuration:
+  paymentConfiguration:
   - paymentProvider: Apple
     enabled: true
     paymentMethod:
@@ -26,13 +27,10 @@ payment-configuration:
         - applePay
       disable:
         - googlePay
-    paymentMethodType:
-      disable:
-        - PhonePe
     schedule:
       retry: true
   - paymentProvider: Samsung
-    enabled: true
+    enabled: false
     paymentMethod:
       enable:
         - androidPay
