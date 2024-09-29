@@ -26,21 +26,21 @@ public class PaymentConfigIntegrationTest {
         assertEquals(2, providers.size());
 
         var appleProvider = providers.stream()
-                .filter(p -> p.getPaymentProvider().equals("Apple"))
+                .filter(p -> p.paymentProvider().equals("Apple"))
                 .findFirst().orElseThrow();
 
-        assertTrue(appleProvider.isEnabled());
-        assertEquals(List.of("applePay"), appleProvider.getPaymentMethod().enable());
-        assertEquals(List.of("googlePay"), appleProvider.getPaymentMethod().disable());
-        assertTrue(appleProvider.getSchedule().retry());
+        assertTrue(appleProvider.enabled());
+        assertEquals(List.of("applePay"), appleProvider.paymentMethod().enable());
+        assertEquals(List.of("googlePay"), appleProvider.paymentMethod().disable());
+        assertTrue(appleProvider.schedule().retry());
 
         var samsungProvider = providers.stream()
-                .filter(p -> p.getPaymentProvider().equals("Samsung"))
+                .filter(p -> p.paymentProvider().equals("Samsung"))
                 .findFirst().orElseThrow();
 
-        assertFalse(samsungProvider.isEnabled());
-        assertEquals(List.of("androidPay"), samsungProvider.getPaymentMethod().enable());
-        assertEquals(List.of("payTm"), samsungProvider.getPaymentMethod().disable());
-        assertFalse(samsungProvider.getSchedule().retry());
+        assertFalse(samsungProvider.enabled());
+        assertEquals(List.of("androidPay"), samsungProvider.paymentMethod().enable());
+        assertEquals(List.of("payTm"), samsungProvider.paymentMethod().disable());
+        assertFalse(samsungProvider.schedule().retry());
     }
 }
