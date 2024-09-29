@@ -11,19 +11,22 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(prefix = "payment-configuration")
 public class PaymentConfig {
-    private List<PaymentProvider> paymentConfiguration;
+    private List<PaymentProvider> paymentCountries;
 
-    public record PaymentProvider(String paymentProvider,
-                                  boolean enabled,
-                                  PaymentMethod paymentMethod,
+    public record PaymentProvider(String name,
+                                  boolean allowUPI,
+                                  List<PaymentMethodEnabled> paymentMethodsEnabled,
                                   Schedule schedule
     ) {
     }
 
-    public record PaymentMethod(List<String> enable, List<String> disable) {
+    public record PaymentMethodEnabled(String name,
+                                       boolean allowUPI,
+                                       List<String> disabled,
+                                       Schedule schedule) {
     }
 
-    public record Schedule(boolean retry) {
+    public record Schedule(boolean retry, int maxCount) {
     }
 }
 

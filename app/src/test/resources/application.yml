@@ -19,25 +19,25 @@ management:
     env:
       enabled: true
 payment-configuration:
-  paymentConfiguration:
-  - paymentProvider: Apple
-    enabled: true
-    paymentMethod:
-      enable:
-        - applePay
-      disable:
-        - googlePay
-    schedule:
-      retry: true
-  - paymentProvider: Samsung
-    enabled: false
-    paymentMethod:
-      enable:
-        - androidPay
-      disable:
-        - payTm
-    schedule:
-      retry: false
+  paymentCountries:
+    - name: India
+      paymentMethodsEnabled:
+        - name: ApplePay
+          allowUPI: true
+          schedule:
+            retry: true
+            maxCount: 99
+          disabled:
+            - googlePay
+            - Paypal
+        - name: PhonePe
+          allowUPI: false
+          disabled:
+            - payTm
+      allowUPI: false
+      schedule:
+       retry: true
+       maxCount: 5
 spring:
   banner:
     location: classpath:cybermedium.txt
