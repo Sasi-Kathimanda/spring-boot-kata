@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,12 +30,12 @@ public class PaymentConfigIntegrationTest {
                 .filter(p -> p.name().equals("India"))
                 .findFirst().orElseThrow();
 
-        assertEquals(List.of("ApplePay","PhonePe"), indiaPaymentCountry
+        assertEquals(List.of("ApplePay", "PhonePe"), indiaPaymentCountry
                 .paymentMethodsEnabled()
                 .stream()
                 .map(PaymentConfig.PaymentMethodEnabled::name)
-                        .collect(Collectors.toList())
-                );
+                .collect(Collectors.toList())
+        );
 
         assertTrue(indiaPaymentCountry.schedule().retry());
 
@@ -52,6 +53,18 @@ public class PaymentConfigIntegrationTest {
 
     @Test
     void givenPMDisabledShouldGiveDecisionAsFalse() {
+        var disabledPM = "googlePay";
+        var indiaProvider = paymentConfig.getPaymentCountries()
+                .stream()
+                .filter(p -> p.name().equals("India"))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Unknown Payment Provider Supplied"));
 
+        var result = indiaProvider.paymentMethodsEnabled()
+                .get(0)
+                .disabled()
+                .stream()
+                .noneMatch(disabledPM::equals);
+        assertFalse(result);
     }
 }
