@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = PaymentConfig.class)
+@SpringBootTest
 @EnableConfigurationProperties
 public class PaymentConfigIntegrationTest {
     @Autowired
     private PaymentConfig paymentConfig;
 
     @Test
-    void testPaymentConfiguration() {
+    void testPaymentConfigurationLoading() {
         assertNotNull(paymentConfig);
 
         var providers = paymentConfig.getPaymentCountries();
@@ -37,6 +37,21 @@ public class PaymentConfigIntegrationTest {
                 );
 
         assertTrue(indiaPaymentCountry.schedule().retry());
+
+    }
+
+    @Test
+    void givenPMHavingConfigShouldApplyAppropriateConfig() {
+
+    }
+
+    @Test
+    void givenPMNotHavingConfigShouldFallbackToDefaultPaymentCountryConfig() {
+
+    }
+
+    @Test
+    void givenPMDisabledShouldGiveDecisionAsFalse() {
 
     }
 }
