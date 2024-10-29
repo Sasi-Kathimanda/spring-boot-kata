@@ -21,7 +21,7 @@ dependencies {
     implementation 'io.micrometer:micrometer-registry-prometheus:1.13.6'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     runtimeOnly 'com.h2database:h2'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.5'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.5'
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
 }
 
